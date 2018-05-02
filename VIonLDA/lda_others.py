@@ -234,7 +234,7 @@ def M_step_Structure(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_alpha_
     return alpha, BETA
 
 
-def E_step_Realdata(alpha, BETA, doc, Phi0, gamma0, max_iter=100, tol=1e-6):
+def E_step_Realdata(alpha, BETA, doc, Phi0, gamma0, max_iter=100, tol=1e-3):
     """
     Latent Dirichlet Allocation: E-step.
     Do to a specific document.
@@ -284,7 +284,7 @@ def E_step_Realdata(alpha, BETA, doc, Phi0, gamma0, max_iter=100, tol=1e-6):
         
     return Phi, gamma
 
-def M_step_Realdata(docs,k, tol,tol_estep,max_iter=100,initial_alpha_shape=5,initial_alpha_scale=2):
+def M_step_Realdata(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_alpha_shape=5,initial_alpha_scale=2):
     """
     Latent Dirichlet Allocation: M-step.
     Do to a list of documnents. -- a list of matrix.

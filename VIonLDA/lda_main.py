@@ -43,9 +43,9 @@ def simulation_data(M=500,k=10,V=1000,xi=40,max_iter=100,gamma_shape=2,gamma_sca
     return docs, alpha, BETA
 
 
-def E_step_Vectorization(alpha, BETA, doc, Phi0, gamma0, tol=1e-6):
+def E_step_Vectorization(alpha, BETA, doc, Phi0, gamma0, max_iter=100,tol=1e-3):
     """
-    Latent Dirichlet Allocation: E-step.
+    Vectorization Version Latent Dirichlet Allocation: E-step.
     Do to a specific document.
     ------------------------------------
     Input:
@@ -93,12 +93,15 @@ def E_step_Vectorization(alpha, BETA, doc, Phi0, gamma0, tol=1e-6):
 
 def M_step_Vectorization(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_alpha_shape=100,initial_alpha_scale=0.01):
     """
-    Latent Dirichlet Allocation: M-step.
+    Vectorization version VI EM for Latent Dirichlet Allocation: M-step.
     Do to a list of documnents. -- a list of matrix.
     -------------------------------------------------
     Input:
     docs: a list of one-hot-coding matrix ;
-    k: a fixed positive integer indicate the number of topics.
+    k: a fixed positive integer indicate the number of topics;
+    tol,tol_estep: tolerance for Mstep,Estep;
+    max_iter:max iteration for E-step, M-step;
+    inital_alpha_shape,scale: initial parameters for alpha. (Parameters for gamma distribution)
     -------------------------------------------------
     Output:
     optimal Nd*k matrix Phi;

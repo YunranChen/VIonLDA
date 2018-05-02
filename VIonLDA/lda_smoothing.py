@@ -5,7 +5,7 @@ import numpy as np
 from scipy.special import digamma, polygamma
 
 
-def E_step_Smoothing(alpha, LAMBDA, doc, Phi0, gamma0, max_iter=100,tol=1e-6):
+def E_step_Smoothing(alpha, LAMBDA, doc, Phi0, gamma0, max_iter=100,tol=1e-3):
     """
     Smoothing Latent Dirichlet Allocation: E-step.
     Do to a specific document.
@@ -52,7 +52,7 @@ def E_step_Smoothing(alpha, LAMBDA, doc, Phi0, gamma0, max_iter=100,tol=1e-6):
     return Phi, gamma
 
 
-def M_step_Smoothing(docs,k, tol=1e-3,tol_estep=1e-3,initial_alpha_shape,initial_alpha_scale,initial_eta_shape,initial_eta_scale,max_iter=100):
+def M_step_Smoothing(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_alpha_shape=100,initial_alpha_scale=0.01,initial_eta_shape=100,initial_eta_scale=0.01):
     """
     Smoothing Latent Dirichlet Allocation: M-step.
     Do to a list of documnents. -- a list of matrix.
@@ -64,6 +64,7 @@ def M_step_Smoothing(docs,k, tol=1e-3,tol_estep=1e-3,initial_alpha_shape,initial
     tol_estep: tolerance for E_step;
     max_iter: max iteration for M_step;
     initial_eta: initialization for eta;
+    initial_alpha: initialization for alpha;
     -------------------------------------------------
     Output:
     optimal Nd*k matrix Phi;
