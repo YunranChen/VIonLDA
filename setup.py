@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='UTF-8') as f:
 
 setup(
     name='VIonLDA',  
-    version='2.6', 
+    version='2.7', 
     description='Variational Inference on LDA model. Reproduce Blei et al., 2003.', 
     long_description=long_description, 
     long_description_content_type='text/markdown', 

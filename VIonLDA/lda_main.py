@@ -156,24 +156,21 @@ def M_step_Vectorization(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_al
           
     return alpha, BETA
 
-def mmse(alpha,BETA,docs,k=10,max_iter_=100,tol_=1e-3,initial_shape=100,initial_scale=0.01):
+def mmse(alpha,BETA,alpha_est,BETA_est):
     """
-    Calculate mse for alpha and BETA . Input the true alpha,BETA and docs. And the parameters for M_step.
-    
+    Calculate mse for alpha and BETA . Input the true and estimate
+    alpha,BETA . 
     -------------------------------------------------
     Input:
     true alpha -- vector;
-    true beta -- matrix;
-    docs -- list of matrix;
-    max_iter_ -- for E_step and M_step;
-    tol_ -- tolerance for E_step and M_step;
-    initial_shape,initial_scale ;
+    true BETA -- matrix;
+    estimator alpha -- vector;
+    estimator BETA_est -- matrix;
     -------------------------------------------------
     Output:
     MSE defined in the report.
     """
     alpha_norm=alpha/np.sum(alpha)
-    alpha_est,BETA_est=M_step_Vectorization(docs=docs,k=k,tol=tol_,tol_estep=tol_,max_iter=max_iter_,initial_alpha_shape=initial_shape,initial_alpha_scale=initial_scale)
     beta_mse=np.mean((BETA_est-BETA)**2)
     alpha_est_norm=alpha_est/np.sum(alpha_est)
     alpha_mse=np.mean((alpha_est_norm-alpha_norm)**2)
