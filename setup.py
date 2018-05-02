@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='UTF-8') as f:
 
 setup(
     name='VIonLDA',  
-    version='2.4', 
+    version='2.6', 
     description='Variational Inference on LDA model. Reproduce Blei et al., 2003.', 
     long_description=long_description, 
     long_description_content_type='text/markdown', 
@@ -18,9 +18,6 @@ setup(
     #py_modules = ['VIonLDA'],
     #scripts = ['lda.py'],
     packages=find_packages(exclude=['tests','Examples','parallel']),  # Required
-    #package_data={  # Optional
-    #    'VIonLDA': ['ap.txt'],
-    #}
     python_requires='>=3',
     
 )

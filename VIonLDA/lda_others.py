@@ -307,7 +307,6 @@ def M_step_Realdata(docs,k, tol=1e-3,tol_estep=1e-3,max_iter=100,initial_alpha_s
 
     
     #initialization
-    #alpha0=np.random.poisson(lam = 5-1, size = k) + 1
     BETA0=np.random.dirichlet(np.ones(V),k)
     alpha0=np.random.gamma(shape=initial_alpha_shape,scale=initial_alpha_scale,size=k)
     PHI=[np.ones((N[d],k))/k for d in range(M)]

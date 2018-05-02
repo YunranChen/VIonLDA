@@ -25,8 +25,8 @@ def E_step_Smoothing(alpha, LAMBDA, doc, Phi0, gamma0, max_iter=100,tol=1e-3):
     #Initialization
     Phi = Phi0
     gamma = gamma0
-    phi_delta = Nd*k
-    gamma_delta = k
+    phi_delta = 1
+    gamma_delta = 1
     
     #relative tolerance is for each element in the matrix
     tol=tol**2
