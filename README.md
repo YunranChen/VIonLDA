@@ -5,6 +5,8 @@ This project is application of Variational Inference on Latent Dirichlet Allocat
 
 # Install the package
 
+Please make sure the package version is 2.7. 
+
 %%bash
 
 pip install --index-url https://test.pypi.org/simple/ VIonLDA
