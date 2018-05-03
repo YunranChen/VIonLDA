@@ -60,7 +60,7 @@ To avoid overflow when applied in real dataset. We set the float128 for the data
 
 # Tests
 
-Inside is .ipynb showing how to use this functions and reproduce the result in the report. Notice if you use parallel version. Make sure you $pip install ray. Sometimes ray cannot run in VM. Please restart the VM.
+Inside is .ipynb showing how to use this functions and reproduce the result on simulation data in the report. 
 
 # Examples
 
@@ -68,7 +68,7 @@ Inside is .ipynb showing how to use these functions on real datasets and reprodu
 
 # Parallel
 
-Inside is .ipynb showing the parallel version of Variational EM on LDA. Because Parallel version would not always work. Depends on the condition of your computer. We decide to exclude this part from the package.
+Inside is .ipynb showing the parallel version of Variational EM on LDA. Make sure you $pip install ray before run it. Sometimes ray cannot run in VM. Please restart the VM. Because Parallel version would not always work. Depends on the condition of your computer. We decide to exclude this part from the package.
 
 # Notice
 
