@@ -72,6 +72,14 @@ Inside is .ipynb showing the parallel version of Variational EM on LDA. Because 
 
 # Notice
 
-All the defaults of the function are set as the report suggest. To reproduce our result, do include random seed 123.
+- All the defaults of the function are set as the report suggest. 
+
+- To reproduce our result, do include random seed 123.
+
+- We expand more on the discussion in our report to firgure out a better data structure. See lda_ideal_data_structure_worse_behavior.ipynb. For the poor behavior, we do not include this part in our package and report. But it is worth discussing.
+
+# Ideal Data Structure But Poor Behavior
+
+As we mentioned in the discussion, we design a version for ideal data structure. We implemented matrix multiplicaiton, vectorization and broadcast in this version. We can see the speed is super fast. However, the core idea that VI work is the Variational parameter $\phi$, $\gamma$ converge. (make the KL distance as small as possible to approximate the probability density) So if we break this rule, the algorithm cannot converge and even intractable. We can see with the same initialization, 10 times iteration, the time for this algorithm is only half of the vectorization version we adopt in the report. However, the mse is a factor of 0.1 to 0.01 in scale worse than the vectorization version. 
 
  
